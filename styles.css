@@ -1,0 +1,157 @@
+body{
+    background-color: #FEF9F8; 
+}
+
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.4fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.2fr 1fr 1fr 1fr;
+    grid-gap: 0.2rem;
+    grid-template-areas:
+    "navbar navbar navbar navbar"
+    "sidebar about-me-header about-me-header about-me-header"
+    "sidebar about-me-pic about-me-text about-me-text"
+    "sidebar paper paper paper"
+    "sidebar images images images"
+}
+
+#navbar-mobile{
+    grid-area: navbar-mobile;
+    display: none;
+}
+
+#images{
+    display: inline;
+    grid-area: images;
+    text-align: center;
+}
+
+#papers{
+    grid-area: paper;
+}
+.paper{
+    text-align: center;
+}
+
+#about-me-header{
+    grid-area: about-me-header;
+}
+
+#about-me-pic{
+    grid-area: about-me-pic;
+    text-align: center;
+}
+
+#about-me-text{
+    grid-area: about-me-text;
+    text-align: center;
+}
+
+#navbar {
+    justify-content:center; 
+    color: white;
+    padding: 5px; 
+    background-color: #EF9273;
+    border-radius: 5px;
+    align-items: center;
+    grid-area: navbar;
+    /* grid-template-columns: auto 1fr; */
+    color: white;
+}
+#sidebar{
+    grid-area: sidebar;
+    background-color:  #EF9273;
+
+}
+#sidebar > a{
+    text-decoration: none;
+    color: #FEF9F8;
+    font-family: Helvetica, sans-serif; 
+    padding: 15px;
+    margin-top: 30px;
+    display: block;
+}
+
+header{
+    text-align: center;
+    color: #EF9273;
+    padding-top: 15px;
+    font-size: x-large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header-line {
+    color: #EF9273;
+    height: 2px;
+}
+
+.image_in_collection{
+    height: 200px;
+    display: inline;
+}
+.image-size{
+    height: 200px;;
+}
+
+
+
+
+/* mobile layout */
+@media only screen and (max-width:800px){
+
+    body{
+        background-color: #FEF9F8; 
+    }
+
+    #navbar-mobile{
+        grid-area: navbar-mobile;
+        justify-content:center; 
+        display: grid;
+        color: white;
+        margin: 15px;
+        padding: 5px; 
+        background-color: #EF9273;
+        border-radius: 5px;
+        align-items: center;
+        color: white;
+    }
+    .left-content  {
+        display: inline;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: large;
+        text-align: left;
+    }
+    
+    .right-content{
+        display: inline;
+        text-align: end;
+    }
+    .right-content > a {
+        text-decoration: none;
+        color: #FEF9F8;
+        font-family: Helvetica, sans-serif;
+    } 
+    #navbar{
+        display: none;
+    }
+    #sidebar{
+        display: none;
+    }
+
+    .container{
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 1fr 1fr 1fr;
+        grid-gap: 0.1rem;
+        grid-template-areas:
+        "navbar-mobile"
+        "about-me-header"
+        "about-me-pic"
+        "about-me-text"
+        "paper"
+        "images";
+    }
+
+}
